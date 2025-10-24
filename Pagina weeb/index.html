@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustang Heritage Store - Legado Americano 🐎</title>
+    <meta name="description" content="Tienda oficial Mustang 2025. Compra autos clásicos, ropa, accesorios y artículos inspirados en el poder del legendario Ford Mustang.">
+    <meta name="keywords" content="Mustang, Ford, autos clásicos, muscle car, chamarras, coleccionables, tienda Mustang">
+    <meta name="author" content="Mustang Heritage Store">
+    <meta name="copyright" content="©️ 2025 Mustang Heritage Store - Todos los derechos reservados.">
+    <meta name="application-name" content="Mustang Store">
+    <meta name="generator" content="VSCode">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body { background-color: #000 !important; color: #fff; }
+
+        .btn-primario { background-color: #c8102e; color: white; border-color: #c8102e; }
+        .btn-primario:hover { background-color: #a10c23; border-color: #a10c23; color: white; }
+        .btn-secundario { background-color: #1d1d1d; color: white; border-color: #1d1d1d; }
+        .btn-secundario:hover { background-color: #333; border-color: #333; color: white; }
+        .btn-oro { background-color: #ffcc00; color: black; border-color: #ffcc00; }
+        .btn-oro:hover { background-color: #e6b800; border-color: #e6b800; }
+
+        .modal-custom .modal-header { background-color: #c8102e; color: white; }
+        .modal-custom .modal-footer { background-color: #fff3f3; }
+        .table-custom-footer { background-color: #f8f8f8; font-weight: bold; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #1ebe58; }
+
+        .carrito-flotante {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #c8102e;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .carrito-contenido {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #c8102e;
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1099;
+        }
+        .carrito-contenido h5 { border-bottom: 1px solid #c8102e; padding-bottom: 8px; margin-bottom: 8px; }
+        .carrito-contenido li { margin-bottom: 6px; font-size: 14px; }
+        .carrito-contenido .total { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+
+<body id="top">
+
+<header class="text-center">
+    <h1 class="display-4 fw-bold"><i class="fa-solid fa-horse"></i> Mustang Heritage Store</h1>
+    <p class="lead">Donde el legado americano cobra vida 🏁</p>
+    <a href="#catalogo" class="btn btn-primario btn-lg mt-3">Descubre el poder Mustang</a>
+</header>
+
+<hr/>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-semibold" href="#top">Mustang Heritage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMustang">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMustang">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#top">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#catalogo">Modelos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#merch">Merchandising</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pedido">Pedido</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="btn btn-primario btn-sm" data-bs-toggle="modal" data-bs-target="#modalAviso">Aviso</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="alert alert-danger text-center shadow-sm" role="alert">
+        🚗 ¡Edición limitada 2025! Mustang Fastback y accesorios oficiales disponibles ahora.
+    </div>
+</div>
+
+<main class="container my-5">
+    <div class="row g-4" id="catalogo">
+        <div class="col-12 col-lg-8">
+            <!-- Productos aquí igual que tu HTML original -->
+            <div class="card shadow-lg mb-4">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="img/Mustang PW 1.jpg" alt="Mustang Fastback 1967" class="img-fluid rounded-start" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title h4 mb-2"><i class="fa-solid fa-car"></i> Mustang Fastback 1967</h2>
+                            <p class="card-text text-muted">Un ícono del automovilismo. Restaurado y listo para rugir con el inconfundible poder del V8 americano.</p>
+                            <p class="fs-5 fw-bold text-success">Precio: $1,250,000 MXN</p>
+                            <button class="btn btn-primario btn-sm btn-agregar" data-nombre="Mustang Fastback 1967" data-precio="1250000">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Más productos y merchandising siguen igual -->
+            <div class="card shadow-lg mb-4">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="img/3415-featured-2024-ford-mustang-dark-horse-review.avif" alt="Mustang Dark Horse 2025" class="img-fluid rounded-start" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title h4 mb-2"><i class="fa-solid fa-horse-head"></i> Mustang Dark Horse 2025</h2>
+                            <p class="card-text text-muted">Motor V8 Coyote, tecnología de punta y estética agresiva.</p>
+                            <p class="fs-5 fw-bold text-success">Precio: $1,950,000 MXN</p>
+                            <button class="btn btn-primario btn-sm btn-agregar" data-nombre="Mustang Dark Horse 2025" data-precio="1950000">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mt-5" id="merch">
+                <h3 class="h4 mb-3">Merchandising Oficial Mustang 🧥</h3>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <img src="img/download-1.jpg" class="card-img-top" alt="Chamarra Mustang">
+                            <div class="card-body">
+                                <h5 class="card-title">Chamarra Mustang Racing</h5>
+                                <p class="card-text">Estilo clásico con el logotipo bordado. Material resistente y cálido.</p>
+                                <p class="fw-bold text-success">$2,499 MXN</p>
+                                <button class="btn btn-primario btn-sm btn-agregar" data-nombre="Chamarra Mustang Racing" data-precio="2499">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <img src="img/download-2.jpg" class="card-img-top" alt="Gorra Mustang">
+                            <div class="card-body">
+                                <h5 class="card-title">Gorra Mustang Heritage</h5>
+                                <p class="card-text">Diseño ajustable con bordado en hilo metálico. Ideal para fanáticos del motor.</p>
+                                <p class="fw-bold text-success">$799 MXN</p>
+                                <button class="btn btn-primario btn-sm btn-agregar" data-nombre="Gorra Mustang Heritage" data-precio="799">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="col-12 col-lg-4">
+            <div class="card shadow-lg border-danger mb-3">
+                <div class="card-header bg-danger text-white fw-bold">🔥 Oferta Limitada 🔥</div>
+                <img src="img/download.jpg" class="card-img-top" alt="Mustang GT500 Shelby">
+                <div class="card-body">
+                    <h5 class="card-title">Mustang GT500 Shelby 1970</h5>
+                    <p class="card-text">Una leyenda de la velocidad americana. Solo 3 unidades disponibles en stock.</p>
+                    <a href="#" class="btn btn-primario w-100">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white fw-bold">Garantía Mustang Heritage</div>
+                <div class="card-body">
+                    <p class="card-text small">Todos nuestros vehículos y productos son verificados y certificados por expertos Mustang. Garantía de autenticidad y calidad.</p>
+                </div>
+                <div class="card-footer text-center small text-muted">Tu legado sobre ruedas.</div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- CARRITO FLOTANTE -->
+<div class="carrito-flotante" id="btnCarrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cantidadCarrito" style="position:absolute; top:-5px; right:-5px; background:red; color:white; border-radius:50%; padding:2px 6px; font-size:12px;">0</span>
+</div>
+<div class="carrito-contenido" id="carritoContenido">
+    <h5>Carrito de Compras</h5>
+    <ul id="listaCarrito"><li>Aún no hay productos.</li></ul>
+    <div class="total" id="totalCarrito">Total: $0</div>
+</div>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/525512345678" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer class="bg-dark text-center text-white py-3 mt-5">
+    <p class="mb-0 small">©️ 2025 Mustang Heritage Store | El legado continúa.</p>
+    <p class="mb-0 small text-muted">“Born to run. Built to last.”</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ====== EFECTO DEGRADADO HSL ======
+  document.addEventListener('mousemove', (e) => {
+      const viewportHeight = window.innerHeight;
+      const normalizedY = e.clientY / viewportHeight;
+      const luminosity = (1 - normalizedY) * 70;
+      const saturation = 10 + Math.abs(normalizedY - 0.5) * 10;
+      const hue = 240;
+      const color = `hsl(${hue}, ${saturation}%, ${luminosity}%)`;
+      document.body.style.backgroundColor = color;
+  });
+
+  // ====== CARRITO FUNCIONAL ======
+  const carritoBtn = document.getElementById('btnCarrito');
+  const carritoContenido = document.getElementById('carritoContenido');
+  const listaCarrito = document.getElementById('listaCarrito');
+  const totalCarritoEl = document.getElementById('totalCarrito');
+  const cantidadCarritoEl = document.getElementById('cantidadCarrito');
+
+  let carrito = [];
+
+  carritoBtn.addEventListener('click', () => {
+      carritoContenido.style.display = carritoContenido.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.querySelectorAll('.btn-agregar').forEach(btn => {
+      btn.addEventListener('click', () => {
+          const nombre = btn.dataset.nombre;
+          const precio = Number(btn.dataset.precio);
+          carrito.push({ nombre, precio });
+          actualizarCarrito();
+      });
+  });
+
+  function actualizarCarrito() {
+      if (carrito.length === 0) {
+          listaCarrito.innerHTML = '<li>Aún no hay productos.</li>';
+          totalCarritoEl.textContent = 'Total: $0';
+          cantidadCarritoEl.textContent = '0';
+          return;
+      }
+
+      listaCarrito.innerHTML = '';
+      let total = 0;
+      carrito.forEach((item, index) => {
+          total += item.precio;
+          const li = document.createElement('li');
+          li.innerHTML = `${item.nombre} - $${item.precio.toLocaleString('es-MX')}
+                          <button style="margin-left:5px;" class="btn btn-sm btn-danger" onclick="eliminarDelCarrito(${index})">X</button>`;
+          listaCarrito.appendChild(li);
+      });
+      totalCarritoEl.textContent = 'Total: $' + total.toLocaleString('es-MX');
+      cantidadCarritoEl.textContent = carrito.length;
+  }
+
+  function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+  }
+</script>
+
+</body>
+</html>

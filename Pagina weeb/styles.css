@@ -1,0 +1,38 @@
+body {
+  background-color: #000; /* fondo negro */
+  color: #fff;
+}
+
+.btn-primario {
+  background-color: #c8102e;
+  color: white;
+  border-color: #c8102e;
+}
+.btn-primario:hover {
+  background-color: #a10c23;
+}
+
+.agregar-carrito {
+  display: inline-block;
+}
+
+#btnCarrito {
+  margin-left: 10px;
+}
+
+#cantidadCarrito {
+  font-size: 0.75rem;
+}
+
+/* Lista carrito */
+#listaCarrito li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#modalCarrito .modal-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
